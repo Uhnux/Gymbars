@@ -1,0 +1,11 @@
+/*.navbar-brand {
+    position: relative;
+    background: url(../../../assets/images/logo.png);
+    height: auto;
+    widows: 100%;
+    left: 15px;
+    background-size: contain;
+}*/
+a:link {
+    text-decoration: none;
+}
