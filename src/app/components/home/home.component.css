@@ -1,0 +1,8 @@
+.carousel-item{
+    min-height: 200px;
+    max-height: 300px;
+} 
+.carousel-item img{
+    min-height: 200px;
+    max-height: 300px;
+}

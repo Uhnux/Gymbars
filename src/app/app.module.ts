@@ -13,6 +13,8 @@ import { EquipmentComponent } from './components/equipment/equipment.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { NgbdModalComponent, NgbdModalContent } from './components/modals/modal-component';
 import { NgbdModalBasic } from './components/modals/modal-basic';
+import { FooterComponent } from './components/footer/footer.component';
+import { NgbdCarouselBasic } from './components/carousel/carousel-basic';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { NgbdModalBasic } from './components/modals/modal-basic';
     ScheduleComponent,
     NgbdModalComponent,
     NgbdModalContent,
-    NgbdModalBasic
+    NgbdModalBasic,
+    FooterComponent,
+    NgbdCarouselBasic
   ],
   imports: [
     BrowserModule,

@@ -27,28 +27,16 @@
     padding-bottom: 25px;
 }
 
+.eAbajo55{
+    padding-bottom: 55px;
+}
+
 .eAbajo200 {
     padding-bottom: 200px;
 }
 
 .eAbajo100 {
     padding-bottom: 100px;
-}
-
-.encuadrar{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
 }
 
 .center {
