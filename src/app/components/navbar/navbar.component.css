@@ -6,6 +6,10 @@
     left: 15px;
     background-size: contain;
 }*/
+a{
+    font-size: 20px;
+}
+
 a:link {
     text-decoration: none;
 }
