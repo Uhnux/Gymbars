@@ -8,10 +8,11 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'programs', component: ProgramsComponent },
-  { path: 'equipment', component: EquipmentComponent },
-  { path: 'schedule', component: ScheduleComponent },
+  //{ path: 'programs', component: ProgramsComponent },
+  //{ path: 'equipment', component: EquipmentComponent },
+  //{ path: 'schedule', component: ScheduleComponent },
   { path: '**', component: Page404Component },
 ];
 
