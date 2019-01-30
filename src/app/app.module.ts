@@ -15,6 +15,7 @@ import { NgbdModalComponent, NgbdModalContent } from './components/modals/modal-
 import { NgbdModalBasic } from './components/modals/modal-basic';
 import { FooterComponent } from './components/footer/footer.component';
 import { NgbdCarouselBasic } from './components/carousel/carousel-basic';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NgbdCarouselBasic } from './components/carousel/carousel-basic';
     NgbdModalContent,
     NgbdModalBasic,
     FooterComponent,
-    NgbdCarouselBasic
+    NgbdCarouselBasic,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
