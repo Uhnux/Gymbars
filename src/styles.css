@@ -14,7 +14,11 @@
 .eArriba25 {
     padding-top: 25px;
 }
-    
+
+.eArriba80 {
+    padding-top: 100px;
+}
+
 .eArriba100 {
     padding-top: 100px;
 }
@@ -40,9 +44,9 @@
 }
 
 .eAbajoRS{
-    min-height: 100px;
+    min-height: 120px;
     max-height: 500px;
-    padding-bottom: 70px;
+    padding-bottom: 113px;
 }
 
 .center {
