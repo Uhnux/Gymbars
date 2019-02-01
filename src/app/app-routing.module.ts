@@ -11,19 +11,23 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', redirectTo: '/home', pathMatch: 'full' },
   { path: 'programs', redirectTo: '/programs', pathMatch: 'full' },
-  { path: 'equipment', redirectTo: '/equipment', pathMatch: 'full' },
+  /*{ path: 'equipment', redirectTo: '/equipment', pathMatch: 'full' },
   { path: 'schedule', redirectTo: '/schedule', pathMatch: 'full' },
-  { path: 'contact', redirectTo: '/contact', pathMatch: 'full' },
+  { path: 'contact', redirectTo: '/contact', pathMatch: 'full' },*/
   { path: 'home', component: HomeComponent },
   { path: 'programs', component: ProgramsComponent },
-  { path: 'equipment', component: EquipmentComponent },
+  /*{ path: 'equipment', component: EquipmentComponent },
   { path: 'schedule', component: ScheduleComponent },
-  { path: 'contact', component: ContactComponent },
+  { path: 'contact', component: ContactComponent },*/
   { path: '**', component: Page404Component },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'enabled',
+    anchorScrolling: 'enabled',
+    scrollOffset: [0, 64] // [x, y]
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

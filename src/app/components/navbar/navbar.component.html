@@ -13,13 +13,17 @@
       <!--Contenido a la izquierda-->
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <!--<li class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link font-weight-bold" routerLink="/home">{{home}}</a>
       </li>
+      <!--<li class="nav-item" routerLinkActive="active">
+        <a class="nav-link font-weight-bold" (click)="irAContacto()">{{contact}}</a>
+        <a class="nav-link font-weight-bold" routerLink="/home" [fragment]="'contact_div'" routerLinkActive="active">{{contact}}</a>
+      </li>-->
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link font-weight-bold" routerLink="/programs">{{programs}}</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <!--<li class="nav-item" routerLinkActive="active">
         <a class="nav-link font-weight-bold" routerLink="/equipment">{{equipment}}</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
