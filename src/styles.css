@@ -87,3 +87,9 @@ img {
 section {
     padding: 20px 0;
 }
+
+/*Colors*/
+
+.bg-black{
+    background-color: black;
+}
