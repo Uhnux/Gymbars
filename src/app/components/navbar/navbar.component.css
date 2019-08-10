@@ -7,7 +7,7 @@
     background-size: contain;
 }*/
 a{
-    font-size: 20px;
+    /*font-size: 15px;*/
 }
 
 a:link {
@@ -46,4 +46,6 @@ a:link {
     top: 0;
     width: 100%;
     z-index: 20;
+    /*height: 130px;*/
+    background: rgba(0, 0, 0, 0.875);
 }
