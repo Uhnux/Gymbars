@@ -1,0 +1,37 @@
+<div class="bg-light">
+  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
+    (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+      <img src="{{slide.img}}">
+    </div>
+  </ngx-slick-carousel>
+  <div id="divHome" class="container eArriba25 text-center">
+    <div class="col-md-12">
+      <!--<div class="jumbotron mt-3">-->
+      <h1 class="display-3">Gymbars</h1>
+      <!--<p class="lead"></p>-->
+      <hr class="my-4">
+      <p>Contamos con todo lo necesario para lograr el cambio que siempre has deseado y de la forma más simple que
+        puedas imaginar</p>
+      <div class="row">
+        <div class="col-sm-4 eArriba25">
+          <ngbd-modal-basic modalTitle="Rutinas HIIT" imagePath="./assets/images/banner1.jpg" description=""
+            linkPath="">
+          </ngbd-modal-basic>
+        </div>
+        <div class="col-sm-4 eArriba25">
+          <ngbd-modal-basic modalTitle="Equipamiento" imagePath="./assets/images/banner2.jpg" description=""
+            linkPath="">
+          </ngbd-modal-basic>
+        </div>
+        <div class="col-sm-4 eArriba25">
+          <ngbd-modal-basic modalTitle="Productos" imagePath="./assets/images/banner3.jpg"
+            description="<p class=&#34;text-center&#34;>A solo Q. 75.00</p>" linkPath=""></ngbd-modal-basic>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-info></app-info>
+  <app-programs></app-programs>
+  <app-location></app-location>
+</div>
