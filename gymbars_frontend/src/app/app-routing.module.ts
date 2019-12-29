@@ -10,7 +10,6 @@ import { ContactComponent } from './components/contact/contact.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home#carouselIndicators', redirectTo: '/home#carouselIndicators', pathMatch: 'full' },
   /*{ path: 'programs', redirectTo: '/programs', pathMatch: 'full' },
   { path: 'equipment', redirectTo: '/equipment', pathMatch: 'full' },
   { path: 'schedule', redirectTo: '/schedule', pathMatch: 'full' },
