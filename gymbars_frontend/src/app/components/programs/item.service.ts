@@ -19,7 +19,6 @@ export class ItemService {
     .pipe(
       map(actions =>
           actions.map(a => {
-            /*
             let item: ItemI = {id: '', title: '', description: '<h4>Ejercicios</h4><li>', img: ''};
             const data = a.payload.doc.data() as ProgramI;
             const id = a.payload.doc.id;
@@ -28,23 +27,19 @@ export class ItemService {
             item.img = data.img;
             let exercises: Array<string> = data.exercises;
             let instructions: Array<string> = data.instructions;
-            //console.log(data);
-            //console.log(exercises);
-            //console.log(instructions);
-            //console.log(instructions.values());
-            //exercises.forEach(element => {
-            //  item.description += element;
-            //});
             let str1 = exercises.join('</li><li>');
+            str1 += '</li>';
             let str2 = instructions.join('</li><li>');
+            str2 += '</li>';
             item.description += str1;
+            item.description += '</br><h4>Instrucciones</h4><li>'
+            item.description += str2;
             return { id, ... item};
-            */
-            ///*
+            /*
             const data = a.payload.doc.data() as ItemI;
             const id = a.payload.doc.id;
             return {id, ... data}
-            //*/
+            */
           })
         )
     )
