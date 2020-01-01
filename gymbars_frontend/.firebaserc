@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "gymbarsgt"
+  },
+  "targets": {
+    "gymbarsgt": {
+      "hosting": {
+        "gymbars": [
+          "gymbarsgt"
+        ]
+      }
+    }
   }
 }

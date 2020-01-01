@@ -1,51 +1,18 @@
-<div id="divPrograms" class="container eArriba25 text-center">
+<div id="divPrograms" class="container eArribaPrograms text-center">
   <div class="col-md-12">
-    <h1 class="display-3">Rutinas de Calistenia</h1>
+    <h1 class="display-3">{{title}}</h1>
     <!--<p class="lead"></p>-->
     <hr class="my-4">
-    <p>Contamos con todo lo necesario para lograr el cambio que siempre has deseado y de la forma más simple que
-      puedas imaginar</p>
+    <p>{{description}}</p>
     <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-      <div ngxSlickItem class="slide">
+      <div ngxSlickItem *ngFor="let slide of programs$ | async" class="slide">
         <div class="eArriba25">
-          <h2>Nivel 0 - Rutina 4</h2>
-          <!--<ngbd-modal-basic modalTitle="Nivel 0 - R4" imagePath="" description="<h1>Innertando</h1><img src=&#34;./assets/images/logo2.jpeg&#34;>" linkPath=""></ngbd-modal-basic>-->
-          <ngbd-modal-basic modalTitle="Nivel 0 - Rutina 4" imagePath="./assets/images/programs/nivel0r4.jpg"
-            description="<h4>Ejercicios</h4><li>Precalentamiento: 15 minutos</li><li>Jumper Jacks: 10 repeticiones</li><li>Plancha: 30 segundos</li><li>Flexiones Inclinadas: 10 repeticiones</li><li>Burpees Medios: 10 repeticiones</li><li>Sentadillas con Salto: 10 repeticiones</li></br><h4>Instrucciones</h4><li>Repetir el ciclo 4 veces</li><li>Descanso entre ejercicios: 45 segundos</li><li>Descanso entre ciclos: 3 minutos</li>"
-            linkPath=""></ngbd-modal-basic>
-        </div>
-      </div>
-      <div ngxSlickItem class="slide">
-        <div class="eArriba25">
-          <h2>Nivel 0 - Rutina 5</h2>
-          <ngbd-modal-basic modalTitle="Nivel 0 - Rutina 5" imagePath="./assets/images/programs/nivel0r5.jpg"
-            description="<h4>Ejercicios</h4><li>Precalentamiento: 15 minutos</li><li>Abdominales (Crunches): 10 repeticiones</li><li>Plancha Alta: 30 segundos</li><li>Flexiones Diamante: 10 repeticiones</li><li>Criss Cross Crunches: 10 repeticiones</li><li>Flexiones de Pika: 10 repeticiones</li></br><h4>Instrucciones</h4><li>Repetir el ciclo 4 veces</li><li>Descanso entre ejercicios: 45 segundos</li><li>Descanso entre ciclos: 3 minutos</li>"
-            linkPath=""></ngbd-modal-basic>
-        </div>
-      </div>
-      <div ngxSlickItem class="slide">
-        <div class="eArriba25">
-          <h2>Nivel 1 - Rutina 4</h2>
-          <ngbd-modal-basic modalTitle="Nivel 1 - Rutina 4" imagePath="./assets/images/programs/nivel1r4.png"
-            description="<h4>Ejercicios</h4><li>Precalentamiento: 15 minutos</li><li>Plancha: 30 segundos</li><li>Plancha Lateral: 30 segundos por lado</li><li>Flexiones Inclinadas: 10 repeticiones</li><li>Fondos en Paralelas: 6 repeticiones</li><li>Sentadillas con Salto: 10 repeticiones</li></br><h4>Instrucciones</h4><li>Repetir el ciclo 4 veces</li><li>Descanso entre ejercicios: 45 segundos</li><li>Descanso entre ciclos: 3 minutos</li>"
+          <h2>{{slide.title}}</h2>
+          <ngbd-modal-basic modalTitle="{{slide.title}}" imagePath="{{slide.img}}"
+            description="{{slide.description}}"
             linkPath=""></ngbd-modal-basic>
         </div>
       </div>
     </ngx-slick-carousel>
   </div>
 </div>
-
-<!--
-<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
-  (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
-  (beforeChange)="beforeChange($event)">
-  <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-    <img src="{{ slide.img }}" alt="" width="100%">
-  </div>
-</ngx-slick-carousel>
-
-<button (click)="addSlide()">Add</button>
-<button (click)="removeSlide()">Remove</button>
-<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
-<button (click)="slickModal.unslick()">unslick</button>
--->

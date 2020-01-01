@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ItemService } from './item.service';
+import { ItemI } from 'src/app/shared/models/item.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +9,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  slides = [
-    {img: "https://firebasestorage.googleapis.com/v0/b/gymbarsgt.appspot.com/o/carousel%2Fcarousel1.jpeg?alt=media&token=b02a524c-fd28-453c-bd5c-91b485cff9b0"},
-    {img: "https://firebasestorage.googleapis.com/v0/b/gymbarsgt.appspot.com/o/carousel%2Fcarousel2.jpeg?alt=media&token=934447e8-a8c5-4978-8e19-84fc9ad2801f"},
-    {img: "https://firebasestorage.googleapis.com/v0/b/gymbarsgt.appspot.com/o/carousel%2Fcarousel3.jpeg?alt=media&token=d307d152-aab8-46aa-a71d-aa975f399b10"},
-    {img: "https://firebasestorage.googleapis.com/v0/b/gymbarsgt.appspot.com/o/carousel%2Fcarousel4.jpeg?alt=media&token=e7c7784a-daff-4c77-9269-be4ce919d887"}
-  ];
 
   slideConfig = {
     "slidesToShow": 1,
@@ -23,14 +18,18 @@ export class HomeComponent implements OnInit {
     "autoplaySpeed": 2000
   };
 
-  constructor(private route: ActivatedRoute) { }
+  public carousel$: Observable<ItemI[]>;
+  public features$: Observable<ItemI[]>;
+  title = 'Gymbars';
+  description = `Contamos con todo lo necesario para lograr el cambio que siempre has deseado y de la forma más simple que
+  puedas imaginar`;
+
+  constructor(private itemSvc: ItemService) { }
 
   ngOnInit() {
-    /*this.route.fragment.subscribe((fragment: string) => { 
-      if (fragment && document.getElementById(fragment) != null) {
-        document.getElementById(fragment).scrollIntoView({ behavior: "smooth" });
-      }
-    });*/
+    //this.itemSvc.getCarousel().subscribe(res => console.log("ITEM", res));
+    this.carousel$ = this.itemSvc.getCarousel();
+    this.features$ = this.itemSvc.getFeatures();
   }
   
 }

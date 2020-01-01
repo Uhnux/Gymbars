@@ -11,14 +11,20 @@ import { Page404Component } from './components/page404/page404.component';
 import { ProgramsComponent } from './components/programs/programs.component';
 import { EquipmentComponent } from './components/equipment/equipment.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
-import { NgbdModalComponent, NgbdModalContent } from './components/modals/modal-component';
-import { NgbdModalBasic } from './components/modals/modal-basic';
+import { NgbdModalBasic } from './components/modals/modal-basic/modal-basic';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { InfoComponent } from './components/info/info.component';
 import { LocationComponent } from './components/location/location.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//Firebase
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireStorageModule, StorageBucket } from "@angular/fire/storage";
+import { AngularFireModule } from "@angular/fire";
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -29,8 +35,6 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     ProgramsComponent,
     EquipmentComponent,
     ScheduleComponent,
-    NgbdModalComponent,
-    NgbdModalContent,
     NgbdModalBasic,
     FooterComponent,
     ContactComponent,
@@ -40,12 +44,18 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule,
+    AngularFirestoreModule,
     FormsModule,
     NgbModule,
     NgxPageScrollCoreModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    {provide: StorageBucket, useValue: 'gs://gymbarsgt.appspot.com'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
