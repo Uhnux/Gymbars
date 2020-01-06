@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ItemService } from './item.service';
 import { ItemI } from 'src/app/shared/models/item.interface';
 import { Observable } from 'rxjs';
@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
     "autoplaySpeed": 2000
   };
 
+  public zoomEnabled: boolean;
   public carousel$: Observable<ItemI[]>;
   public features$: Observable<ItemI[]>;
   title = 'Gymbars';
@@ -30,6 +31,20 @@ export class HomeComponent implements OnInit {
     //this.itemSvc.getCarousel().subscribe(res => console.log("ITEM", res));
     this.carousel$ = this.itemSvc.getCarousel();
     this.features$ = this.itemSvc.getFeatures();
+    if(window.innerWidth <= 500){
+      this.zoomEnabled = true;
+    }else{
+      this.zoomEnabled = false;
+    }
   }
   
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    if(window.innerWidth <= 500){
+      this.zoomEnabled = true;
+    }else{
+      this.zoomEnabled = false;
+    }
+  }
+
 }

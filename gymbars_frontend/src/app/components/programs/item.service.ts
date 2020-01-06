@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from "@angular/fire/firestore";
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, filter } from 'rxjs/operators';
 import { ProgramI } from '../../shared/models/program.interface';
 import { ItemI } from 'src/app/shared/models/item.interface';
 
@@ -12,14 +12,14 @@ export class ItemService {
 
   constructor(private afs: AngularFirestore) { }
 
-  public getPrograms(): Observable<ItemI[]>{
-    let items: Observable<ItemI[]>;
+  public getPrograms(): Observable<ItemI[]> {
     return this.afs.collection('programs')
-    .snapshotChanges()
-    .pipe(
-      map(actions =>
+      .snapshotChanges()
+      .pipe(
+        map(actions => actions.filter(action => Number(action.payload.doc.id) <= 3)),
+        map(actions =>
           actions.map(a => {
-            let item: ItemI = {id: '', title: '', description: '<h4>Ejercicios</h4><li>', img: ''};
+            let item: ItemI = { id: '', title: '', description: '<h4>Ejercicios</h4><li>', img: '' };
             const data = a.payload.doc.data() as ProgramI;
             const id = a.payload.doc.id;
             item.id = data.id;
@@ -34,14 +34,10 @@ export class ItemService {
             item.description += str1;
             item.description += '</br><h4>Instrucciones</h4><li>'
             item.description += str2;
-            return { id, ... item};
-            /*
-            const data = a.payload.doc.data() as ItemI;
-            const id = a.payload.doc.id;
-            return {id, ... data}
-            */
+            return { id, ...item };
           })
         )
-    )
+      )
   }
+
 }

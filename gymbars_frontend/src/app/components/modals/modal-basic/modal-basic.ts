@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 
