@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ItemI } from 'src/app/shared/models/item.interface';
 import { ItemService } from './item.service';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-programs',
@@ -21,6 +22,7 @@ export class ProgramsComponent implements OnInit {
   ngOnInit() {
     this.innerWidth = window.innerWidth;
     this.fitPrograms(this.innerWidth);
+    let item: ItemI;
     this.programs$ = this.itemSvc.getPrograms();
   }
 

@@ -12,6 +12,7 @@ import { ProgramsComponent } from './components/programs/programs.component';
 import { EquipmentComponent } from './components/equipment/equipment.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { NgbdModalBasic } from './components/modals/modal-basic/modal-basic';
+import { ModalCarouselComponent } from './components/modals/modal-carousel/modal-carousel.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
@@ -19,6 +20,7 @@ import { InfoComponent } from './components/info/info.component';
 import { LocationComponent } from './components/location/location.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 //Firebase
 import { AngularFirestoreModule } from "@angular/fire/firestore";
@@ -39,7 +41,8 @@ import { environment } from 'src/environments/environment';
     FooterComponent,
     ContactComponent,
     InfoComponent,
-    LocationComponent
+    LocationComponent,
+    ModalCarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { environment } from 'src/environments/environment';
     NgbModule,
     NgxPageScrollCoreModule,
     SlickCarouselModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxImageZoomModule.forRoot()
   ],
   providers: [
     {provide: StorageBucket, useValue: 'gs://gymbarsgt.appspot.com'}
