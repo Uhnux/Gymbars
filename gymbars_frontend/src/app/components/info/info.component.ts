@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ScheduleI } from 'src/app/shared/models/schedule.interface';
 import { Observable } from 'rxjs/internal/Observable';
 import { ScheduleService } from './schedule.service';
+import { window } from 'rxjs/operators';
 
 @Component({
   selector: 'app-info',
@@ -28,6 +29,7 @@ export class InfoComponent implements OnInit {
 
   ngOnInit() {
     this.schedule$ = this.scheduleSvc.getSchedule();
+
   }
 
 }
