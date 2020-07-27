@@ -47,10 +47,16 @@
     padding-bottom: 100px;
 }
 
+.eArribaRS{
+    min-height: 120px;
+    max-height: 500px;
+    padding-top: 145px;
+}
+
 .eAbajoRS{
     min-height: 120px;
     max-height: 500px;
-    padding-bottom: 26px;
+    padding-bottom: 150px;
 }
 
 .center {
